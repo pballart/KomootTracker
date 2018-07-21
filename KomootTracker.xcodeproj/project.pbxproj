@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E292103125B00BD244E /* AppDelegate.swift */; };
+		5F9C5E2C2103125B00BD244E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2B2103125B00BD244E /* ViewController.swift */; };
+		5F9C5E2F2103125B00BD244E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2D2103125B00BD244E /* Main.storyboard */; };
+		5F9C5E312103125C00BD244E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E302103125C00BD244E /* Assets.xcassets */; };
+		5F9C5E342103125C00BD244E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */; };
+		5F9C5E3F2103125D00BD244E /* KomootTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F9C5E3B2103125D00BD244E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F9C5E1E2103125B00BD244E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F9C5E252103125B00BD244E;
+			remoteInfo = KomootTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F9C5E262103125B00BD244E /* KomootTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KomootTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9C5E292103125B00BD244E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F9C5E2B2103125B00BD244E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F9C5E2E2103125B00BD244E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F9C5E302103125C00BD244E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F9C5E332103125C00BD244E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F9C5E352103125C00BD244E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9C5E3A2103125C00BD244E /* KomootTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomootTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomootTrackerTests.swift; sourceTree = "<group>"; };
+		5F9C5E402103125D00BD244E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F9C5E232103125B00BD244E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9C5E372103125C00BD244E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F9C5E1D2103125B00BD244E = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E282103125B00BD244E /* KomootTracker */,
+				5F9C5E3D2103125D00BD244E /* KomootTrackerTests */,
+				5F9C5E272103125B00BD244E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F9C5E272103125B00BD244E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E262103125B00BD244E /* KomootTracker.app */,
+				5F9C5E3A2103125C00BD244E /* KomootTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F9C5E282103125B00BD244E /* KomootTracker */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E292103125B00BD244E /* AppDelegate.swift */,
+				5F9C5E2B2103125B00BD244E /* ViewController.swift */,
+				5F9C5E2D2103125B00BD244E /* Main.storyboard */,
+				5F9C5E302103125C00BD244E /* Assets.xcassets */,
+				5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */,
+				5F9C5E352103125C00BD244E /* Info.plist */,
+			);
+			path = KomootTracker;
+			sourceTree = "<group>";
+		};
+		5F9C5E3D2103125D00BD244E /* KomootTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */,
+				5F9C5E402103125D00BD244E /* Info.plist */,
+			);
+			path = KomootTrackerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F9C5E252103125B00BD244E /* KomootTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F9C5E432103125D00BD244E /* Build configuration list for PBXNativeTarget "KomootTracker" */;
+			buildPhases = (
+				5F9C5E222103125B00BD244E /* Sources */,
+				5F9C5E232103125B00BD244E /* Frameworks */,
+				5F9C5E242103125B00BD244E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KomootTracker;
+			productName = KomootTracker;
+			productReference = 5F9C5E262103125B00BD244E /* KomootTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F9C5E392103125C00BD244E /* KomootTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F9C5E462103125D00BD244E /* Build configuration list for PBXNativeTarget "KomootTrackerTests" */;
+			buildPhases = (
+				5F9C5E362103125C00BD244E /* Sources */,
+				5F9C5E372103125C00BD244E /* Frameworks */,
+				5F9C5E382103125C00BD244E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F9C5E3C2103125D00BD244E /* PBXTargetDependency */,
+			);
+			name = KomootTrackerTests;
+			productName = KomootTrackerTests;
+			productReference = 5F9C5E3A2103125C00BD244E /* KomootTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F9C5E1E2103125B00BD244E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Pau Ballart";
+				TargetAttributes = {
+					5F9C5E252103125B00BD244E = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					5F9C5E392103125C00BD244E = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 5F9C5E252103125B00BD244E;
+					};
+				};
+			};
+			buildConfigurationList = 5F9C5E212103125B00BD244E /* Build configuration list for PBXProject "KomootTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F9C5E1D2103125B00BD244E;
+			productRefGroup = 5F9C5E272103125B00BD244E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F9C5E252103125B00BD244E /* KomootTracker */,
+				5F9C5E392103125C00BD244E /* KomootTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F9C5E242103125B00BD244E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9C5E342103125C00BD244E /* LaunchScreen.storyboard in Resources */,
+				5F9C5E312103125C00BD244E /* Assets.xcassets in Resources */,
+				5F9C5E2F2103125B00BD244E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9C5E382103125C00BD244E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F9C5E222103125B00BD244E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9C5E2C2103125B00BD244E /* ViewController.swift in Sources */,
+				5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F9C5E362103125C00BD244E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9C5E3F2103125D00BD244E /* KomootTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F9C5E3C2103125D00BD244E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F9C5E252103125B00BD244E /* KomootTracker */;
+			targetProxy = 5F9C5E3B2103125D00BD244E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F9C5E2D2103125B00BD244E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F9C5E2E2103125B00BD244E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F9C5E332103125C00BD244E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F9C5E412103125D00BD244E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5F9C5E422103125D00BD244E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F9C5E442103125D00BD244E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 887XBWP9ER;
+				INFOPLIST_FILE = KomootTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SolArtApps.KomootTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F9C5E452103125D00BD244E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 887XBWP9ER;
+				INFOPLIST_FILE = KomootTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SolArtApps.KomootTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5F9C5E472103125D00BD244E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 887XBWP9ER;
+				INFOPLIST_FILE = KomootTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SolArtApps.KomootTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KomootTracker.app/KomootTracker";
+			};
+			name = Debug;
+		};
+		5F9C5E482103125D00BD244E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 887XBWP9ER;
+				INFOPLIST_FILE = KomootTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.SolArtApps.KomootTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KomootTracker.app/KomootTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F9C5E212103125B00BD244E /* Build configuration list for PBXProject "KomootTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F9C5E412103125D00BD244E /* Debug */,
+				5F9C5E422103125D00BD244E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F9C5E432103125D00BD244E /* Build configuration list for PBXNativeTarget "KomootTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F9C5E442103125D00BD244E /* Debug */,
+				5F9C5E452103125D00BD244E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F9C5E462103125D00BD244E /* Build configuration list for PBXNativeTarget "KomootTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F9C5E472103125D00BD244E /* Debug */,
+				5F9C5E482103125D00BD244E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F9C5E1E2103125B00BD244E /* Project object */;
+}
