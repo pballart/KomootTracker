@@ -114,15 +114,12 @@
 			isa = PBXGroup;
 			children = (
 				5F9C5E292103125B00BD244E /* AppDelegate.swift */,
-				5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */,
-				5F9C5E6E2104EC4400BD244E /* RouteTrackerCell.swift */,
-				5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */,
-				5F9C5E5C2104BEA500BD244E /* LocationManager.swift */,
-				5F9C5E642104E3CB00BD244E /* Photo.swift */,
-				5F9C5E732104F91C00BD244E /* Utils.swift */,
+				5F9C5E752104FC3B00BD244E /* View */,
+				5F9C5E782104FC7800BD244E /* Presenter */,
+				5F9C5E772104FC5E00BD244E /* Common */,
 				5F9C5E4F2103150F00BD244E /* Network */,
+				5F9C5E762104FC5300BD244E /* Model */,
 				5F9C5E2D2103125B00BD244E /* Main.storyboard */,
-				5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */,
 				5F9C5E302103125C00BD244E /* Assets.xcassets */,
 				5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */,
 				5F9C5E352103125C00BD244E /* Info.plist */,
@@ -150,6 +147,41 @@
 				5F9C5E4D210314E700BD244E /* PhotoDTO.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5F9C5E752104FC3B00BD244E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */,
+				5F9C5E6E2104EC4400BD244E /* RouteTrackerCell.swift */,
+				5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F9C5E762104FC5300BD244E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E642104E3CB00BD244E /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F9C5E772104FC5E00BD244E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E5C2104BEA500BD244E /* LocationManager.swift */,
+				5F9C5E732104F91C00BD244E /* Utils.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5F9C5E782104FC7800BD244E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		8FBE471CE41EF87F9787667D /* Pods */ = {

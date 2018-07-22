@@ -30,9 +30,7 @@ class RouteTrackerView: UIViewController, RouteTrackerViewProtocol {
         
         let realm = try! Realm()
         let photos = realm.objects(Photo.self).sorted(byKeyPath: "fetchDate", ascending: false)
-        let dataSource = Observable.collection(from: photos)
-        
-        dataSource.bind(to: tableView.rx.items(cellIdentifier: "RouteTrackerCellIdentifier")) { (row, photo: Photo, cell: RouteTrackerCell) in
+        Observable.collection(from: photos).bind(to: tableView.rx.items(cellIdentifier: "RouteTrackerCellIdentifier")) { (row, photo: Photo, cell: RouteTrackerCell) in
             guard let imageURL = URL(string: photo.url) else { return }
             cell.photoImageView.af_setImage(withURL: imageURL)
             }.disposed(by: disposeBag)
