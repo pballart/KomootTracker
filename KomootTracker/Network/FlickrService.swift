@@ -12,12 +12,12 @@ import Result
 import RxSwift
 
 protocol FlickrServiceProtocol {
-    func retrievePhotoFromLocation(latitude: Double,
-                                   longitude: Double,
-                         onResult: @escaping (_ result: Result<FlickrPhotosResponseDTO, NetworkError> ) -> Void)
+    func searchPhotoBy(latitude: Double,
+                       longitude: Double,
+                       minDate: Double) -> Observable<FlickrPhotosResponseDTO>
 }
 
-class FlickrService {
+class FlickrService: FlickrServiceProtocol {
     let disposeBag = DisposeBag()
     let flickrProvider: MoyaProvider<SearchEndpoint>
     
@@ -27,26 +27,8 @@ class FlickrService {
     
     func searchPhotoBy(latitude: Double,
                        longitude: Double,
-                       minDate: Double,
-                         onResult: @escaping (_ result: Result<FlickrPhotosResponseDTO, NetworkError> ) -> Void) {
+                       minDate: Double) -> Observable<FlickrPhotosResponseDTO> {
         let endpoint: SearchEndpoint = .searchPhoto(lat: latitude, lon: longitude, minDate: minDate)
-        flickrProvider.rx.request(endpoint).filterSuccessfulStatusCodes().subscribe(onSuccess: { response in
-            do {
-                _ = try response.filterSuccessfulStatusCodes()
-                let decoder = JSONDecoder()
-                let responseDTO = try decoder.decode(FlickrPhotosResponseDTO.self, from: response.data)
-                onResult(.success(responseDTO))
-            } catch MoyaError.statusCode {
-                onResult(.failure(NetworkError.serverInternalError))
-            } catch {
-                onResult(.failure(NetworkError.responseFormatError))
-            }
-        }) { error in
-            if let err = error as? MoyaError {
-                onResult(.failure(NetworkError.translateError(err)))
-            } else {
-                onResult(.failure(.responseFormatError))
-            }
-            }.disposed(by: disposeBag)
+        return flickrProvider.rx.request(endpoint).filterSuccessfulStatusCodes().asObservable().map(FlickrPhotosResponseDTO.self)
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 import RealmSwift
+import RxSwift
 
 protocol RouteTrackerViewProtocol: class {
     func updateStartButton(title: String)
@@ -23,14 +24,17 @@ protocol RouteTrackerPresenterProtocol: class {
 
 class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
     fileprivate weak var view: RouteTrackerViewProtocol!
-    fileprivate let provider = FlickrService(provider: MoyaProvider<SearchEndpoint>())
+    fileprivate let provider: FlickrServiceProtocol
     fileprivate var locationManager = LocationManager()
+    
+    let disposeBag = DisposeBag()
     
     var isPendingToStart = false
     let minDate = Date().addingTimeInterval(-3600*24*365).timeIntervalSince1970
 
     init(view: RouteTrackerViewProtocol) {
         self.view = view
+        provider = FlickrService(provider: MoyaProvider<SearchEndpoint>())
     }
     
     func viewDidLoad() {
@@ -61,15 +65,6 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
         }
     }
     
-    private func savePhotoToDB(_ photoDTO: PhotoDTO) {
-        let photo = Photo()
-        photo.loadValue(id: photoDTO.id, url: photoDTO.imageURL, fetchDate: Date())
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(photo)
-        }
-    }
-    
     private func cleanDataBase() {
         let realm = try! Realm()
         let photos = realm.objects(Photo.self)
@@ -82,15 +77,13 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
 extension RouteTrackerPresenter: LocationManagerDelegate {
     func didUpdateLocation(lat: Double, lon: Double) {
         print("New location received: \(lat) - \(lon)")
-        provider.searchPhotoBy(latitude: lat, longitude: lon, minDate: minDate) { (result) in
-            switch result {
-            case .success(let searchDTO):
-                guard let photo = searchDTO.photos.photos.first else { return }
-                self.savePhotoToDB(photo)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        provider.searchPhotoBy(latitude: lat, longitude: lon, minDate: minDate).filter({ (responseDTO) -> Bool in
+            return responseDTO.photos.photos.count > 0
+        }).map({ (responseDTO) -> Photo in
+            let photo = responseDTO.photos.photos.first!
+            return Photo().loadValue(id: photo.id, url: photo.imageURL, fetchDate: Date())
+        }).subscribe(Realm.rx.add())
+        .disposed(by: disposeBag)
     }
     
     func didChangeAuthorizationStatus(status: LocationStatus) {

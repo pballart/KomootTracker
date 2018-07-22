@@ -13,7 +13,6 @@
 		5F9C5E312103125C00BD244E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E302103125C00BD244E /* Assets.xcassets */; };
 		5F9C5E342103125C00BD244E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */; };
 		5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E492103147200BD244E /* FlickrService.swift */; };
-		5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E4B210314CF00BD244E /* NetworkError.swift */; };
 		5F9C5E4E210314E700BD244E /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E4D210314E700BD244E /* PhotoDTO.swift */; };
 		5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */; };
 		5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E572103AD6400BD244E /* Credentials.swift */; };
@@ -52,7 +51,6 @@
 		5F9C5E3A2103125C00BD244E /* KomootTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomootTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E402103125D00BD244E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9C5E492103147200BD244E /* FlickrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
-		5F9C5E4B210314CF00BD244E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5F9C5E4D210314E700BD244E /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		5F9C5E572103AD6400BD244E /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				5F9C5E492103147200BD244E /* FlickrService.swift */,
 				5F9C5E572103AD6400BD244E /* Credentials.swift */,
 				5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */,
-				5F9C5E4B210314CF00BD244E /* NetworkError.swift */,
 				5F9C5E4D210314E700BD244E /* PhotoDTO.swift */,
 			);
 			path = Network;
@@ -429,7 +426,6 @@
 				5F9C5E652104E3CB00BD244E /* Photo.swift in Sources */,
 				5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */,
 				5F9C5E5D2104BEA500BD244E /* LocationManager.swift in Sources */,
-				5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */,
 				5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */,
 				5F9C5E6F2104EC4400BD244E /* RouteTrackerCell.swift in Sources */,
 				5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */,
