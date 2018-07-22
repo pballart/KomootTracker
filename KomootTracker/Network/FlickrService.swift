@@ -14,7 +14,7 @@ import RxSwift
 protocol FlickrServiceProtocol {
     func retrievePhotoFromLocation(latitude: Double,
                                    longitude: Double,
-                         onResult: @escaping (_ result: Result<SearchPhotoDTO, NetworkError> ) -> Void)
+                         onResult: @escaping (_ result: Result<FlickrPhotosResponseDTO, NetworkError> ) -> Void)
 }
 
 class FlickrService {
@@ -28,14 +28,14 @@ class FlickrService {
     func searchPhotoBy(latitude: Double,
                        longitude: Double,
                        minDate: Double,
-                         onResult: @escaping (_ result: Result<SearchPhotoDTO, NetworkError> ) -> Void) {
+                         onResult: @escaping (_ result: Result<FlickrPhotosResponseDTO, NetworkError> ) -> Void) {
         let endpoint: SearchEndpoint = .searchPhoto(lat: latitude, lon: longitude, minDate: minDate)
         flickrProvider.rx.request(endpoint).filterSuccessfulStatusCodes().subscribe(onSuccess: { response in
             do {
                 _ = try response.filterSuccessfulStatusCodes()
                 let decoder = JSONDecoder()
-                let exchangeData = try decoder.decode(SearchPhotoDTO.self, from: response.data)
-                onResult(.success(exchangeData))
+                let responseDTO = try decoder.decode(FlickrPhotosResponseDTO.self, from: response.data)
+                onResult(.success(responseDTO))
             } catch MoyaError.statusCode {
                 onResult(.failure(NetworkError.serverInternalError))
             } catch {

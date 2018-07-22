@@ -39,6 +39,7 @@ extension SearchEndpoint: TargetType {
                     "format": "json",
                     "nojsoncallback": 1,
                     "api_key": FLICKR_API_KEY,
+                    "per_page": 1,
                     "lat": lat,
                     "lon": lon,
                     "min_taken_date": minDate]

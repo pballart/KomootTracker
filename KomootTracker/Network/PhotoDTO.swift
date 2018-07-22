@@ -10,23 +10,48 @@ import Foundation
 
 struct PhotoDTO: Decodable {
     let id: String
-    let owner: String
+    let owner: String?
     let secret: String
     let server: String
     let farm: Int
-    let title: String
-    let isPublic: Int //TODO map to ispublic
-    let isFriend: Int //TODO map to isfriend
-    let isFamily: Int //TODO map to isfamily
+    let title: String?
+    let isPublic: Int?
+    let isFriend: Int?
+    let isFamily: Int?
     var imageURL: String {
         return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case owner
+        case secret
+        case server
+        case farm
+        case title
+        case isPublic = "ispublic"
+        case isFriend = "isfriend"
+        case isFamily = "isfamily"
     }
 }
 
 struct SearchPhotoDTO: Decodable {
-    let page: Int
-    let pages: Int
-    let perPage: Int
-    let total: Int
-    let photos: [PhotoDTO] //TODO map to photo
+    let page: Int?
+    let pages: Int?
+    let perPage: Int?
+    let total: String?
+    let photos: [PhotoDTO]
+    
+    private enum CodingKeys: String, CodingKey {
+        case page
+        case pages
+        case perPage = "perpage"
+        case total
+        case photos = "photo"
+    }
+}
+
+struct FlickrPhotosResponseDTO: Decodable {
+    let photos: SearchPhotoDTO
+    let stat: String
 }
