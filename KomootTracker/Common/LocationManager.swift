@@ -36,6 +36,9 @@ class LocationManager: NSObject, LocationManagerProtocol {
     var isTrackingLocation: Bool
     var lastLocation: CLLocation?
     
+    let minimumDistanceBetweenLocationUpdates: Double = 50
+    let locationDistanceFilter: Double = 100
+    
     override init() {
         locationManager = CLLocationManager()
         isTrackingLocation = false
@@ -45,7 +48,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.activityType = CLActivityType.fitness
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 100
+        locationManager.distanceFilter = locationDistanceFilter
         locationManager.showsBackgroundLocationIndicator = true
     }
     
@@ -88,7 +91,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
         if let previousLocation = self.lastLocation {
-            if  previousLocation.distance(from: newLocation) > 50 {
+            if  previousLocation.distance(from: newLocation) > minimumDistanceBetweenLocationUpdates {
                 self.lastLocation = newLocation
                 delegate?.didUpdateLocation(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
             }
