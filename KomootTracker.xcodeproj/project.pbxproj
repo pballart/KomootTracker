@@ -13,6 +13,13 @@
 		5F9C5E312103125C00BD244E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E302103125C00BD244E /* Assets.xcassets */; };
 		5F9C5E342103125C00BD244E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */; };
 		5F9C5E3F2103125D00BD244E /* KomootTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */; };
+		5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E492103147200BD244E /* FlickrService.swift */; };
+		5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E4B210314CF00BD244E /* NetworkError.swift */; };
+		5F9C5E4E210314E700BD244E /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E4D210314E700BD244E /* PhotoDTO.swift */; };
+		5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */; };
+		5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E572103AD6400BD244E /* Credentials.swift */; };
+		6DAA6CE3E9357390BC31145C /* Pods_KomootTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */; };
+		BB2E0E1CFE8A54FAAB9409D6 /* Pods_KomootTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4663F2376816E654B04E3E55 /* Pods-KomootTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTracker/Pods-KomootTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E262103125B00BD244E /* KomootTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KomootTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E292103125B00BD244E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9C5E2B2103125B00BD244E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +45,15 @@
 		5F9C5E3A2103125C00BD244E /* KomootTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomootTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomootTrackerTests.swift; sourceTree = "<group>"; };
 		5F9C5E402103125D00BD244E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9C5E492103147200BD244E /* FlickrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
+		5F9C5E4B210314CF00BD244E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5F9C5E4D210314E700BD244E /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
+		5F9C5E572103AD6400BD244E /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		75E31B0391ACC7FCF9D3FF67 /* Pods-KomootTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D8EEF806AD0EAD9456310C /* Pods-KomootTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4AF1DC75EEB2A1E93E73DC1 /* Pods-KomootTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTracker/Pods-KomootTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DAA6CE3E9357390BC31145C /* Pods_KomootTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2E0E1CFE8A54FAAB9409D6 /* Pods_KomootTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +82,8 @@
 				5F9C5E282103125B00BD244E /* KomootTracker */,
 				5F9C5E3D2103125D00BD244E /* KomootTrackerTests */,
 				5F9C5E272103125B00BD244E /* Products */,
+				8FBE471CE41EF87F9787667D /* Pods */,
+				F94E8BE9F763DE56075B22BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +101,7 @@
 			children = (
 				5F9C5E292103125B00BD244E /* AppDelegate.swift */,
 				5F9C5E2B2103125B00BD244E /* ViewController.swift */,
+				5F9C5E4F2103150F00BD244E /* Network */,
 				5F9C5E2D2103125B00BD244E /* Main.storyboard */,
 				5F9C5E302103125C00BD244E /* Assets.xcassets */,
 				5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */,
@@ -96,6 +119,38 @@
 			path = KomootTrackerTests;
 			sourceTree = "<group>";
 		};
+		5F9C5E4F2103150F00BD244E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5F9C5E492103147200BD244E /* FlickrService.swift */,
+				5F9C5E572103AD6400BD244E /* Credentials.swift */,
+				5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */,
+				5F9C5E4B210314CF00BD244E /* NetworkError.swift */,
+				5F9C5E4D210314E700BD244E /* PhotoDTO.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8FBE471CE41EF87F9787667D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4663F2376816E654B04E3E55 /* Pods-KomootTracker.debug.xcconfig */,
+				F4AF1DC75EEB2A1E93E73DC1 /* Pods-KomootTracker.release.xcconfig */,
+				E8D8EEF806AD0EAD9456310C /* Pods-KomootTrackerTests.debug.xcconfig */,
+				75E31B0391ACC7FCF9D3FF67 /* Pods-KomootTrackerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F94E8BE9F763DE56075B22BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */,
+				A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F9C5E432103125D00BD244E /* Build configuration list for PBXNativeTarget "KomootTracker" */;
 			buildPhases = (
+				21F946B910A95CAC33125E72 /* [CP] Check Pods Manifest.lock */,
 				5F9C5E222103125B00BD244E /* Sources */,
 				5F9C5E232103125B00BD244E /* Frameworks */,
 				5F9C5E242103125B00BD244E /* Resources */,
+				C9A51B558263F2B54D054F41 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F9C5E462103125D00BD244E /* Build configuration list for PBXNativeTarget "KomootTrackerTests" */;
 			buildPhases = (
+				ECEA9012892D70C989239AD9 /* [CP] Check Pods Manifest.lock */,
 				5F9C5E362103125C00BD244E /* Sources */,
 				5F9C5E372103125C00BD244E /* Frameworks */,
 				5F9C5E382103125C00BD244E /* Resources */,
+				543120AB036A9B29746513F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,13 +251,105 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21F946B910A95CAC33125E72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KomootTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		543120AB036A9B29746513F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9A51B558263F2B54D054F41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KomootTracker/Pods-KomootTracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootTracker/Pods-KomootTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECEA9012892D70C989239AD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KomootTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5F9C5E222103125B00BD244E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9C5E4E210314E700BD244E /* PhotoDTO.swift in Sources */,
 				5F9C5E2C2103125B00BD244E /* ViewController.swift in Sources */,
+				5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */,
+				5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */,
+				5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */,
 				5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */,
+				5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +507,7 @@
 		};
 		5F9C5E442103125D00BD244E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4663F2376816E654B04E3E55 /* Pods-KomootTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,6 +526,7 @@
 		};
 		5F9C5E452103125D00BD244E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4AF1DC75EEB2A1E93E73DC1 /* Pods-KomootTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,8 +545,9 @@
 		};
 		5F9C5E472103125D00BD244E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D8EEF806AD0EAD9456310C /* Pods-KomootTrackerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 887XBWP9ER;
@@ -413,8 +567,9 @@
 		};
 		5F9C5E482103125D00BD244E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75E31B0391ACC7FCF9D3FF67 /* Pods-KomootTrackerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 887XBWP9ER;
