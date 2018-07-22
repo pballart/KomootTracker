@@ -34,6 +34,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
     var locationManager: CLLocationManager
     weak var delegate: LocationManagerDelegate?
     var isTrackingLocation: Bool
+    var lastLocation: CLLocation?
     
     override init() {
         locationManager = CLLocationManager()
@@ -84,8 +85,14 @@ class LocationManager: NSObject, LocationManagerProtocol {
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let lastLocation = locations.last else { return }
-        delegate?.didUpdateLocation(lat: lastLocation.coordinate.latitude, lon: lastLocation.coordinate.longitude)
+        guard let newLocation = locations.last else { return }
+        if let previousLocation = self.lastLocation, previousLocation.distance(from: newLocation) > 50 {
+            self.lastLocation = newLocation
+            delegate?.didUpdateLocation(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
+        } else {
+            self.lastLocation = newLocation
+            delegate?.didUpdateLocation(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
