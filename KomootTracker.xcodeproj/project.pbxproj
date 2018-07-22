@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E292103125B00BD244E /* AppDelegate.swift */; };
-		5F9C5E2C2103125B00BD244E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2B2103125B00BD244E /* ViewController.swift */; };
+		5F9C5E2C2103125B00BD244E /* RouteTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */; };
 		5F9C5E2F2103125B00BD244E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2D2103125B00BD244E /* Main.storyboard */; };
 		5F9C5E312103125C00BD244E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E302103125C00BD244E /* Assets.xcassets */; };
 		5F9C5E342103125C00BD244E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */; };
-		5F9C5E3F2103125D00BD244E /* KomootTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */; };
 		5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E492103147200BD244E /* FlickrService.swift */; };
 		5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E4B210314CF00BD244E /* NetworkError.swift */; };
 		5F9C5E4E210314E700BD244E /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E4D210314E700BD244E /* PhotoDTO.swift */; };
 		5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */; };
 		5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E572103AD6400BD244E /* Credentials.swift */; };
+		5F9C5E5D2104BEA500BD244E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E5C2104BEA500BD244E /* LocationManager.swift */; };
+		5F9C5E5F2104CD1200BD244E /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E5E2104CD1200BD244E /* APITests.swift */; };
+		5F9C5E612104CD3100BD244E /* LocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */; };
+		5F9C5E632104DF9A00BD244E /* RouteTrackerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */; };
 		6DAA6CE3E9357390BC31145C /* Pods_KomootTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */; };
 		BB2E0E1CFE8A54FAAB9409D6 /* Pods_KomootTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -37,19 +40,22 @@
 		5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E262103125B00BD244E /* KomootTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KomootTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E292103125B00BD244E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F9C5E2B2103125B00BD244E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerView.swift; sourceTree = "<group>"; };
 		5F9C5E2E2103125B00BD244E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F9C5E302103125C00BD244E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F9C5E332103125C00BD244E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F9C5E352103125C00BD244E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9C5E3A2103125C00BD244E /* KomootTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KomootTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomootTrackerTests.swift; sourceTree = "<group>"; };
 		5F9C5E402103125D00BD244E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9C5E492103147200BD244E /* FlickrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
 		5F9C5E4B210314CF00BD244E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5F9C5E4D210314E700BD244E /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		5F9C5E502103A7D400BD244E /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		5F9C5E572103AD6400BD244E /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		5F9C5E5C2104BEA500BD244E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5F9C5E5E2104CD1200BD244E /* APITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerMock.swift; sourceTree = "<group>"; };
+		5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerPresenter.swift; sourceTree = "<group>"; };
 		75E31B0391ACC7FCF9D3FF67 /* Pods-KomootTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D8EEF806AD0EAD9456310C /* Pods-KomootTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				5F9C5E292103125B00BD244E /* AppDelegate.swift */,
-				5F9C5E2B2103125B00BD244E /* ViewController.swift */,
+				5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */,
+				5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */,
+				5F9C5E5C2104BEA500BD244E /* LocationManager.swift */,
 				5F9C5E4F2103150F00BD244E /* Network */,
 				5F9C5E2D2103125B00BD244E /* Main.storyboard */,
 				5F9C5E302103125C00BD244E /* Assets.xcassets */,
@@ -113,7 +121,8 @@
 		5F9C5E3D2103125D00BD244E /* KomootTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F9C5E3E2103125D00BD244E /* KomootTrackerTests.swift */,
+				5F9C5E5E2104CD1200BD244E /* APITests.swift */,
+				5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */,
 				5F9C5E402103125D00BD244E /* Info.plist */,
 			);
 			path = KomootTrackerTests;
@@ -205,6 +214,11 @@
 				TargetAttributes = {
 					5F9C5E252103125B00BD244E = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5F9C5E392103125C00BD244E = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -344,9 +358,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9C5E4E210314E700BD244E /* PhotoDTO.swift in Sources */,
-				5F9C5E2C2103125B00BD244E /* ViewController.swift in Sources */,
+				5F9C5E632104DF9A00BD244E /* RouteTrackerPresenter.swift in Sources */,
+				5F9C5E2C2103125B00BD244E /* RouteTrackerView.swift in Sources */,
 				5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */,
 				5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */,
+				5F9C5E5D2104BEA500BD244E /* LocationManager.swift in Sources */,
 				5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */,
 				5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */,
 				5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */,
@@ -357,7 +373,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9C5E3F2103125D00BD244E /* KomootTrackerTests.swift in Sources */,
+				5F9C5E612104CD3100BD244E /* LocationManagerMock.swift in Sources */,
+				5F9C5E5F2104CD1200BD244E /* APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

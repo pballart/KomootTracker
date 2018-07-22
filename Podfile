@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 def common_pods
     pod 'Moya/RxSwift', '~> 10.0'

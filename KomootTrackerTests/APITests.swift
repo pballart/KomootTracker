@@ -10,7 +10,7 @@ import XCTest
 @testable import KomootTracker
 import Moya
 
-class KomootTrackerTests: XCTestCase {
+class APITests: XCTestCase {
     
     func testAPICallSucceeds() {
         let networkExpectation = expectation(description: "networktest")
