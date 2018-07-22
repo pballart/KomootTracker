@@ -4,6 +4,9 @@ platform :ios, '11.0'
 def common_pods
     pod 'Moya/RxSwift', '~> 10.0'
     pod 'Result'
+    pod 'RealmSwift'
+    pod 'RxRealm'
+    pod 'AlamofireImage', '~> 3.3'
 end
 
 target 'KomootTracker' do

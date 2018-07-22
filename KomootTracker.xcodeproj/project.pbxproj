@@ -21,6 +21,9 @@
 		5F9C5E5F2104CD1200BD244E /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E5E2104CD1200BD244E /* APITests.swift */; };
 		5F9C5E612104CD3100BD244E /* LocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */; };
 		5F9C5E632104DF9A00BD244E /* RouteTrackerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */; };
+		5F9C5E652104E3CB00BD244E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E642104E3CB00BD244E /* Photo.swift */; };
+		5F9C5E6D2104EBF900BD244E /* RouteTrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */; };
+		5F9C5E6F2104EC4400BD244E /* RouteTrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E6E2104EC4400BD244E /* RouteTrackerCell.swift */; };
 		6DAA6CE3E9357390BC31145C /* Pods_KomootTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */; };
 		BB2E0E1CFE8A54FAAB9409D6 /* Pods_KomootTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		5F9C5E5E2104CD1200BD244E /* APITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerMock.swift; sourceTree = "<group>"; };
 		5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerPresenter.swift; sourceTree = "<group>"; };
+		5F9C5E642104E3CB00BD244E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteTrackerCell.xib; sourceTree = "<group>"; };
+		5F9C5E6E2104EC4400BD244E /* RouteTrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerCell.swift; sourceTree = "<group>"; };
 		75E31B0391ACC7FCF9D3FF67 /* Pods-KomootTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		A700F8DD1C6B4523B06639E1 /* Pods_KomootTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D8EEF806AD0EAD9456310C /* Pods-KomootTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,10 +113,13 @@
 			children = (
 				5F9C5E292103125B00BD244E /* AppDelegate.swift */,
 				5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */,
+				5F9C5E6E2104EC4400BD244E /* RouteTrackerCell.swift */,
 				5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */,
 				5F9C5E5C2104BEA500BD244E /* LocationManager.swift */,
+				5F9C5E642104E3CB00BD244E /* Photo.swift */,
 				5F9C5E4F2103150F00BD244E /* Network */,
 				5F9C5E2D2103125B00BD244E /* Main.storyboard */,
+				5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */,
 				5F9C5E302103125C00BD244E /* Assets.xcassets */,
 				5F9C5E322103125C00BD244E /* LaunchScreen.storyboard */,
 				5F9C5E352103125C00BD244E /* Info.plist */,
@@ -250,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9C5E6D2104EBF900BD244E /* RouteTrackerCell.xib in Resources */,
 				5F9C5E342103125C00BD244E /* LaunchScreen.storyboard in Resources */,
 				5F9C5E312103125C00BD244E /* Assets.xcassets in Resources */,
 				5F9C5E2F2103125B00BD244E /* Main.storyboard in Resources */,
@@ -292,15 +302,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KomootTrackerTests/Pods-KomootTrackerTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,15 +334,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KomootTracker/Pods-KomootTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,10 +387,12 @@
 				5F9C5E632104DF9A00BD244E /* RouteTrackerPresenter.swift in Sources */,
 				5F9C5E2C2103125B00BD244E /* RouteTrackerView.swift in Sources */,
 				5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */,
+				5F9C5E652104E3CB00BD244E /* Photo.swift in Sources */,
 				5F9C5E512103A7D400BD244E /* SearchEndpoint.swift in Sources */,
 				5F9C5E5D2104BEA500BD244E /* LocationManager.swift in Sources */,
 				5F9C5E4C210314CF00BD244E /* NetworkError.swift in Sources */,
 				5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */,
+				5F9C5E6F2104EC4400BD244E /* RouteTrackerCell.swift in Sources */,
 				5F9C5E4A2103147200BD244E /* FlickrService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

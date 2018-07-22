@@ -44,7 +44,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.activityType = CLActivityType.fitness
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = CLLocationDistance(100)
+        locationManager.distanceFilter = 100
         locationManager.showsBackgroundLocationIndicator = true
     }
     
