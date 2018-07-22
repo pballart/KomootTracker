@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxRealm
+import RealmSwift
+import AlamofireImage
 
 class RouteTrackerView: UIViewController, RouteTrackerViewProtocol {
     
@@ -14,11 +19,23 @@ class RouteTrackerView: UIViewController, RouteTrackerViewProtocol {
     @IBOutlet var tableView: UITableView!
     
     fileprivate var presenter: RouteTrackerPresenterProtocol?
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = RouteTrackerPresenter(view: self)
         presenter?.viewDidLoad()
+        tableView.register(UINib(nibName: "RouteTrackerCell", bundle: nil), forCellReuseIdentifier: "RouteTrackerCellIdentifier")
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        let realm = try! Realm()
+        let photos = realm.objects(Photo.self).sorted(byKeyPath: "fetchDate", ascending: false)
+        let dataSource = Observable.collection(from: photos)
+        
+        dataSource.bind(to: tableView.rx.items(cellIdentifier: "RouteTrackerCellIdentifier")) { (row, photo: Photo, cell: RouteTrackerCell) in
+            guard let imageURL = URL(string: photo.url) else { return }
+            cell.photoImageView.af_setImage(withURL: imageURL)
+            }.disposed(by: disposeBag)
     }
 
     @IBAction func startRoute(_ sender: UIBarButtonItem) {
@@ -45,5 +62,11 @@ class RouteTrackerView: UIViewController, RouteTrackerViewProtocol {
         let action = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension RouteTrackerView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
     }
 }

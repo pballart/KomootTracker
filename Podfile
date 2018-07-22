@@ -6,6 +6,7 @@ def common_pods
     pod 'Result'
     pod 'RealmSwift'
     pod 'RxRealm'
+    pod 'RxCocoa'
     pod 'AlamofireImage', '~> 3.3'
 end
 

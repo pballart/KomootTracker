@@ -12,4 +12,8 @@ import AlamofireImage
 class RouteTrackerCell: UITableViewCell {
     @IBOutlet var photoImageView: UIImageView!
     
+    override func prepareForReuse() {
+        photoImageView.image = nil
+    }
+    
 }
