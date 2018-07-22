@@ -16,7 +16,7 @@ class KomootTrackerTests: XCTestCase {
         let networkExpectation = expectation(description: "networktest")
         let stubbingProvider = MoyaProvider<SearchEndpoint>(stubClosure: MoyaProvider.immediatelyStub)
         let provider = FlickrService(provider: stubbingProvider)
-        let minDate = Date().addingTimeInterval(-3600*24*356).timeIntervalSince1970
+        let minDate = Date().addingTimeInterval(-3600*24*365).timeIntervalSince1970
         provider.searchPhotoBy(latitude: 41.376172, longitude: 2.148466, minDate: minDate) { (result) in
             switch result {
             case .success(let searchDTO):
