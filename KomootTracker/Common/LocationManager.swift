@@ -59,6 +59,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
         print("Stop udating location")
         locationManager.stopUpdatingLocation()
         isTrackingLocation = false
+        lastLocation = nil
     }
     
     func requestLocationPermission() {
@@ -86,9 +87,11 @@ class LocationManager: NSObject, LocationManagerProtocol {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
-        if let previousLocation = self.lastLocation, previousLocation.distance(from: newLocation) > 50 {
-            self.lastLocation = newLocation
-            delegate?.didUpdateLocation(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
+        if let previousLocation = self.lastLocation {
+            if  previousLocation.distance(from: newLocation) > 50 {
+                self.lastLocation = newLocation
+                delegate?.didUpdateLocation(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
+            }
         } else {
             self.lastLocation = newLocation
             delegate?.didUpdateLocation(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
