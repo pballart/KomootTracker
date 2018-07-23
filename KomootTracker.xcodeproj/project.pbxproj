@@ -11,6 +11,7 @@
 		5F77D60621067EEB00868032 /* RouteTrackerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60521067EEB00868032 /* RouteTrackerPresenterTests.swift */; };
 		5F77D60821067EF600868032 /* RouteTrackerViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60721067EF600868032 /* RouteTrackerViewMock.swift */; };
 		5F77D60A21067FD300868032 /* FlickrServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60921067FD300868032 /* FlickrServiceMock.swift */; };
+		5F77D60C210682D300868032 /* LocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60B210682D300868032 /* LocationManagerMock.swift */; };
 		5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E292103125B00BD244E /* AppDelegate.swift */; };
 		5F9C5E2C2103125B00BD244E /* RouteTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */; };
 		5F9C5E2F2103125B00BD244E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2D2103125B00BD244E /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		5F77D60521067EEB00868032 /* RouteTrackerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerPresenterTests.swift; sourceTree = "<group>"; };
 		5F77D60721067EF600868032 /* RouteTrackerViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerViewMock.swift; sourceTree = "<group>"; };
 		5F77D60921067FD300868032 /* FlickrServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrServiceMock.swift; sourceTree = "<group>"; };
+		5F77D60B210682D300868032 /* LocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerMock.swift; sourceTree = "<group>"; };
 		5F9C5E262103125B00BD244E /* KomootTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KomootTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E292103125B00BD244E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				5F77D60521067EEB00868032 /* RouteTrackerPresenterTests.swift */,
 				5F77D60721067EF600868032 /* RouteTrackerViewMock.swift */,
 				5F77D60921067FD300868032 /* FlickrServiceMock.swift */,
+				5F77D60B210682D300868032 /* LocationManagerMock.swift */,
 				5F9C5E402103125D00BD244E /* Info.plist */,
 			);
 			path = KomootTrackerTests;
@@ -453,6 +456,7 @@
 				5F9C5E612104CD3100BD244E /* LocationManagerDelegateMock.swift in Sources */,
 				5F77D60A21067FD300868032 /* FlickrServiceMock.swift in Sources */,
 				5F77D60621067EEB00868032 /* RouteTrackerPresenterTests.swift in Sources */,
+				5F77D60C210682D300868032 /* LocationManagerMock.swift in Sources */,
 				5F9C5E5F2104CD1200BD244E /* APITests.swift in Sources */,
 				5F77D60821067EF600868032 /* RouteTrackerViewMock.swift in Sources */,
 			);
