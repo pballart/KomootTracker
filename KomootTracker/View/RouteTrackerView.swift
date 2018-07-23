@@ -26,6 +26,7 @@ class RouteTrackerView: UIViewController, RouteTrackerViewProtocol {
         presenter = RouteTrackerPresenter(view: self)
         presenter?.viewDidLoad()
         tableView.register(UINib(nibName: "RouteTrackerCell", bundle: nil), forCellReuseIdentifier: "RouteTrackerCellIdentifier")
+        tableView.tableFooterView = UIView()
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         let realm = try! Realm()

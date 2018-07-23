@@ -16,6 +16,7 @@ protocol LocationManagerProtocol: class {
     func locationStatus() -> LocationStatus
     var delegate: LocationManagerDelegate? { get set }
     var isTrackingLocation: Bool { get set }
+    func nearestPhotoFrom(latitude: Double, longitude: Double, photos: [PhotoDTO]) -> Photo
 }
 
 protocol LocationManagerDelegate: class {
@@ -85,11 +86,27 @@ class LocationManager: NSObject, LocationManagerProtocol {
         }
     }
     
+    func nearestPhotoFrom(latitude: Double, longitude: Double, photos: [PhotoDTO]) -> Photo {
+        let centerLocation = CLLocation(latitude: latitude, longitude: longitude)
+        var smallestDistance: Double = Double.greatestFiniteMagnitude
+        var nearestPhotoDTO: PhotoDTO?
+        for photo in photos {
+            let photoLocation = CLLocation(latitude: Double(photo.latitude) ?? 0, longitude: Double(photo.longitude) ?? 0)
+            let distance = photoLocation.distance(from: centerLocation)
+            if distance < smallestDistance {
+                smallestDistance = distance
+                nearestPhotoDTO = photo
+            }
+        }
+        guard let choosenPhotoDTO = nearestPhotoDTO else { return Photo() }
+        return Photo().loadValue(id: choosenPhotoDTO.id, url: choosenPhotoDTO.imageURL, fetchDate: Date())
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
+        
         if let previousLocation = self.lastLocation {
             if  previousLocation.distance(from: newLocation) > minimumDistanceBetweenLocationUpdates {
                 self.lastLocation = newLocation

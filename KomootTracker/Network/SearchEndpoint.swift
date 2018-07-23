@@ -39,12 +39,13 @@ extension SearchEndpoint: TargetType {
                     "format": "json",
                     "nojsoncallback": 1,
                     "api_key": FLICKR_API_KEY,
-                    "per_page": 1,
-                    "radius": 1,
-                    "has_geo": 1,
                     "lat": lat,
                     "lon": lon,
-                    "min_date_upload": minDate]
+                    "radius": 0.05,
+                    "has_geo": 1,
+                    "media": "photos",
+                    "extras": "geo",
+                    "min_taken_date": minDate]
         }
     }
     

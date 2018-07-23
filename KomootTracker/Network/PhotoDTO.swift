@@ -15,9 +15,8 @@ struct PhotoDTO: Decodable {
     let server: String
     let farm: Int
     let title: String?
-    let isPublic: Int?
-    let isFriend: Int?
-    let isFamily: Int?
+    let latitude: String
+    let longitude: String
     var imageURL: String {
         return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
     }
@@ -29,9 +28,8 @@ struct PhotoDTO: Decodable {
         case server
         case farm
         case title
-        case isPublic = "ispublic"
-        case isFriend = "isfriend"
-        case isFamily = "isfamily"
+        case latitude
+        case longitude
     }
 }
 

@@ -28,9 +28,10 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
     fileprivate var locationManager = LocationManager()
     
     let disposeBag = DisposeBag()
-    
     var isPendingToStart = false
-    let minDate = Date().addingTimeInterval(-3600*24*365).timeIntervalSince1970
+    
+    //Fetch images taken in the latests 6 months
+    let minDate = Date().addingTimeInterval(-3600*24*30*6).timeIntervalSince1970
 
     init(view: RouteTrackerViewProtocol) {
         self.view = view
@@ -72,6 +73,7 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
             realm.delete(photos)
         }
     }
+    
 }
 
 extension RouteTrackerPresenter: LocationManagerDelegate {
@@ -80,8 +82,7 @@ extension RouteTrackerPresenter: LocationManagerDelegate {
         provider.searchPhotoBy(latitude: lat, longitude: lon, minDate: minDate).filter({ (responseDTO) -> Bool in
             return responseDTO.photos.photos.count > 0
         }).map({ (responseDTO) -> Photo in
-            let photo = responseDTO.photos.photos.first!
-            return Photo().loadValue(id: photo.id, url: photo.imageURL, fetchDate: Date())
+            return self.locationManager.nearestPhotoFrom(latitude: lat, longitude: lon, photos: responseDTO.photos.photos)
         }).subscribe(Realm.rx.add())
         .disposed(by: disposeBag)
     }
