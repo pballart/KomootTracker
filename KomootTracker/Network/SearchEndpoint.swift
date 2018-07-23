@@ -32,7 +32,7 @@ extension SearchEndpoint: TargetType {
         }
     }
     
-    var parameters: [String: Any]? {
+    var parameters: [String: Any] {
         switch self {
         case .searchPhoto(let lat, let lon, let minDate):
             return ["method": "flickr.photos.search",
@@ -68,16 +68,26 @@ extension SearchEndpoint: TargetType {
                                         "total": "392923",
                                         "photo": [
                                             {
-                                                "id": "42610932595",
-                                                "owner": "89853750@N00",
-                                                "secret": "5861b51bab",
-                                                "server": "1806",
+                                                "id": "43362704372",
+                                                "owner": "31526369@N00",
+                                                "secret": "1cc7bf9f46",
+                                                "server": "1765",
                                                 "farm": 2,
-                                                "title": "AntonelloFranzil-2048-WM-DSC00619",
+                                                "title": "Cal anar-hi, anar-hi i anar-hi, Sants-Montjuïc (Barcelona, el Barcelonès)",
                                                 "ispublic": 1,
                                                 "isfriend": 0,
-                                                "isfamily": 0
-                                            }
+                                                "isfamily": 0,
+                                                "latitude": "41.379277",
+                                                "longitude": "2.144343",
+                                                "accuracy": "16",
+                                                "context": 0,
+                                                "place_id": "RcSZk8ZTUrjzcdMOkA",
+                                                "woeid": "20220091",
+                                                "geo_is_family": 0,
+                                                "geo_is_friend": 0,
+                                                "geo_is_contact": 0,
+                                                "geo_is_public": 1
+                                            },
                                         ]
                                     },
                                     "stat": "ok"
@@ -90,7 +100,7 @@ extension SearchEndpoint: TargetType {
     var task: Task {
         switch self {
         case .searchPhoto:
-            return .requestParameters(parameters: parameters ?? [:], encoding: parameterEncoding)
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         }
     }
     

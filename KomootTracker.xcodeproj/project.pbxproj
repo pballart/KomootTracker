@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F77D604210675AE00868032 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D603210675AE00868032 /* LocationManagerTests.swift */; };
+		5F77D60621067EEB00868032 /* RouteTrackerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60521067EEB00868032 /* RouteTrackerPresenterTests.swift */; };
+		5F77D60821067EF600868032 /* RouteTrackerViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60721067EF600868032 /* RouteTrackerViewMock.swift */; };
+		5F77D60A21067FD300868032 /* FlickrServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77D60921067FD300868032 /* FlickrServiceMock.swift */; };
 		5F9C5E2A2103125B00BD244E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E292103125B00BD244E /* AppDelegate.swift */; };
 		5F9C5E2C2103125B00BD244E /* RouteTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */; };
 		5F9C5E2F2103125B00BD244E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E2D2103125B00BD244E /* Main.storyboard */; };
@@ -18,7 +22,7 @@
 		5F9C5E582103AD6400BD244E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E572103AD6400BD244E /* Credentials.swift */; };
 		5F9C5E5D2104BEA500BD244E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E5C2104BEA500BD244E /* LocationManager.swift */; };
 		5F9C5E5F2104CD1200BD244E /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E5E2104CD1200BD244E /* APITests.swift */; };
-		5F9C5E612104CD3100BD244E /* LocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */; };
+		5F9C5E612104CD3100BD244E /* LocationManagerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E602104CD3100BD244E /* LocationManagerDelegateMock.swift */; };
 		5F9C5E632104DF9A00BD244E /* RouteTrackerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */; };
 		5F9C5E652104E3CB00BD244E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C5E642104E3CB00BD244E /* Photo.swift */; };
 		5F9C5E6D2104EBF900BD244E /* RouteTrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		4663F2376816E654B04E3E55 /* Pods-KomootTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootTracker/Pods-KomootTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		5A76406A07DFEE568CFCDF3F /* Pods_KomootTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F77D603210675AE00868032 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
+		5F77D60521067EEB00868032 /* RouteTrackerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerPresenterTests.swift; sourceTree = "<group>"; };
+		5F77D60721067EF600868032 /* RouteTrackerViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerViewMock.swift; sourceTree = "<group>"; };
+		5F77D60921067FD300868032 /* FlickrServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrServiceMock.swift; sourceTree = "<group>"; };
 		5F9C5E262103125B00BD244E /* KomootTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KomootTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9C5E292103125B00BD244E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9C5E2B2103125B00BD244E /* RouteTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerView.swift; sourceTree = "<group>"; };
@@ -56,7 +64,7 @@
 		5F9C5E572103AD6400BD244E /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		5F9C5E5C2104BEA500BD244E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5F9C5E5E2104CD1200BD244E /* APITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
-		5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerMock.swift; sourceTree = "<group>"; };
+		5F9C5E602104CD3100BD244E /* LocationManagerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegateMock.swift; sourceTree = "<group>"; };
 		5F9C5E622104DF9A00BD244E /* RouteTrackerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerPresenter.swift; sourceTree = "<group>"; };
 		5F9C5E642104E3CB00BD244E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5F9C5E6C2104EBF900BD244E /* RouteTrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteTrackerCell.xib; sourceTree = "<group>"; };
@@ -129,7 +137,11 @@
 			isa = PBXGroup;
 			children = (
 				5F9C5E5E2104CD1200BD244E /* APITests.swift */,
-				5F9C5E602104CD3100BD244E /* LocationManagerMock.swift */,
+				5F77D603210675AE00868032 /* LocationManagerTests.swift */,
+				5F9C5E602104CD3100BD244E /* LocationManagerDelegateMock.swift */,
+				5F77D60521067EEB00868032 /* RouteTrackerPresenterTests.swift */,
+				5F77D60721067EF600868032 /* RouteTrackerViewMock.swift */,
+				5F77D60921067FD300868032 /* FlickrServiceMock.swift */,
 				5F9C5E402103125D00BD244E /* Info.plist */,
 			);
 			path = KomootTrackerTests;
@@ -437,8 +449,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9C5E612104CD3100BD244E /* LocationManagerMock.swift in Sources */,
+				5F77D604210675AE00868032 /* LocationManagerTests.swift in Sources */,
+				5F9C5E612104CD3100BD244E /* LocationManagerDelegateMock.swift in Sources */,
+				5F77D60A21067FD300868032 /* FlickrServiceMock.swift in Sources */,
+				5F77D60621067EEB00868032 /* RouteTrackerPresenterTests.swift in Sources */,
 				5F9C5E5F2104CD1200BD244E /* APITests.swift in Sources */,
+				5F77D60821067EF600868032 /* RouteTrackerViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

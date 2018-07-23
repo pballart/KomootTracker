@@ -91,7 +91,10 @@ class LocationManager: NSObject, LocationManagerProtocol {
         var smallestDistance: Double = Double.greatestFiniteMagnitude
         var nearestPhotoDTO: PhotoDTO?
         for photo in photos {
-            let photoLocation = CLLocation(latitude: Double(photo.latitude) ?? 0, longitude: Double(photo.longitude) ?? 0)
+            guard let lat = Double(photo.latitude), let lon = Double(photo.longitude) else {
+                continue
+            }
+            let photoLocation = CLLocation(latitude: lat, longitude: lon)
             let distance = photoLocation.distance(from: centerLocation)
             if distance < smallestDistance {
                 smallestDistance = distance

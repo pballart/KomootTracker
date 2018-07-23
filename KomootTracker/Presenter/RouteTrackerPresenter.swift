@@ -25,7 +25,7 @@ protocol RouteTrackerPresenterProtocol: class {
 class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
     fileprivate weak var view: RouteTrackerViewProtocol!
     fileprivate let provider: FlickrServiceProtocol
-    fileprivate var locationManager = LocationManager()
+    fileprivate var locationManager: LocationManagerProtocol
     
     let disposeBag = DisposeBag()
     var isPendingToStart = false
@@ -33,9 +33,12 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
     //Fetch images taken in the latests 6 months
     let minDate = Date().addingTimeInterval(-3600*24*30*6).timeIntervalSince1970
 
-    init(view: RouteTrackerViewProtocol) {
+    init(view: RouteTrackerViewProtocol,
+         provider: FlickrServiceProtocol = FlickrService(provider: MoyaProvider<SearchEndpoint>()),
+         locationManager: LocationManagerProtocol = LocationManager()) {
         self.view = view
-        provider = FlickrService(provider: MoyaProvider<SearchEndpoint>())
+        self.provider = provider
+        self.locationManager = locationManager
     }
     
     func viewDidLoad() {

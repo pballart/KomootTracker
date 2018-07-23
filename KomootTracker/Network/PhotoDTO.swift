@@ -21,6 +21,18 @@ struct PhotoDTO: Decodable {
         return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
     }
     
+    init(id: String, owner: String?, secret: String, server: String,
+         farm: Int, title: String?,  latitude: String, longitude: String) {
+        self.id = id
+        self.owner = owner
+        self.secret = secret
+        self.server = server
+        self.farm = farm
+        self.title = title
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case id
         case owner
