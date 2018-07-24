@@ -41,7 +41,7 @@ class LocationManagerMock: LocationManagerProtocol {
         return .authorized
     }
     
-    func nearestLocation(locations: [(Double, Double)], from center: (Double, Double)) -> Int? {
+    func nearestLocation(locations: [Location], from center: Location) -> Int? {
         nearestLocation = true
         return 0
     }

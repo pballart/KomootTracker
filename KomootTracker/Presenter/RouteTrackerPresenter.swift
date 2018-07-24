@@ -76,8 +76,8 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
         } catch { }
     }
     
-    func bestPhotoFromResponse(responseDTO: FlickrPhotosResponseDTO, centerLocation: (Double, Double)) -> Photo {
-        let locations = responseDTO.photos.photos.compactMap({ (photoDTO) -> (Double, Double)? in
+    func bestPhotoFromResponse(responseDTO: FlickrPhotosResponseDTO, centerLocation: Location) -> Photo {
+        let locations = responseDTO.photos.photos.compactMap({ (photoDTO) -> Location? in
             guard let lat = Double(photoDTO.latitude), let lon = Double(photoDTO.longitude) else { return nil }
             return (lat, lon)
         })

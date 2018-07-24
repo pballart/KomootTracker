@@ -9,6 +9,8 @@
 import Foundation
 import CoreLocation
 
+typealias Location = (latitude: Double, longitude: Double)
+
 protocol LocationManagerProtocol: class {
     func startUpdatingLocation()
     func stopUpdatingLocation()
@@ -16,7 +18,7 @@ protocol LocationManagerProtocol: class {
     func locationStatus() -> LocationStatus
     var delegate: LocationManagerDelegate? { get set }
     var isTrackingLocation: Bool { get set }
-    func nearestLocation(locations: [(Double, Double)], from center: (Double, Double)) -> Int?
+    func nearestLocation(locations: [Location], from center: Location) -> Int?
 }
 
 protocol LocationManagerDelegate: class {
@@ -86,12 +88,12 @@ class LocationManager: NSObject, LocationManagerProtocol {
         }
     }
     
-    func nearestLocation(locations: [(Double, Double)], from center: (Double, Double)) -> Int? {
-        let centerLocation = CLLocation(latitude: center.0, longitude: center.1)
+    func nearestLocation(locations: [Location], from center: Location) -> Int? {
+        let centerLocation = CLLocation(latitude: center.latitude, longitude: center.longitude)
         var smallestDistance: Double = Double.greatestFiniteMagnitude
         var nearestIndex: Int?
         for (index, location) in locations.enumerated() {
-            let evaluatingLocation = CLLocation(latitude: location.0, longitude: location.1)
+            let evaluatingLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
             let distance = evaluatingLocation.distance(from: centerLocation)
             if distance < smallestDistance {
                 smallestDistance = distance
