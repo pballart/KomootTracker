@@ -15,7 +15,7 @@ class LocationManagerMock: LocationManagerProtocol {
     var stopUpdatingLocationCalled = false
     var requestLocationPermissionCalled = false
     var locationStatusCalled = false
-    var nearestPhotoFromCalled = false
+    var nearestLocation = false
     
     var delegate: LocationManagerDelegate?
     var isTrackingLocation: Bool
@@ -41,9 +41,9 @@ class LocationManagerMock: LocationManagerProtocol {
         return .authorized
     }
     
-    func nearestPhotoFrom(latitude: Double, longitude: Double, photos: [PhotoDTO]) -> Photo {
-        nearestPhotoFromCalled = true
-        return Photo()
+    func nearestLocation(locations: [(Double, Double)], from center: (Double, Double)) -> Int? {
+        nearestLocation = true
+        return 0
     }
     
 }

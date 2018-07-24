@@ -43,23 +43,20 @@ class LocationManagerTests: XCTestCase {
     func testNearestPhotoFromLocation() {
         let centralLatitude: Double = 41.0
         let centralLongitude: Double = 2.0
-        let photo1 = PhotoDTO(id: "1", owner: nil, secret: "secret", server: "server", farm: 1, title: nil, latitude: "43.0", longitude: "2.0")
-        let photo2 = PhotoDTO(id: "2", owner: nil, secret: "secret", server: "server", farm: 1, title: nil, latitude: "42.1", longitude: "2.0")
+        let location1 = (43.0, 2.0)
+        let location2 = (42.1, 2.0)
         
-        let nearestPhoto = locationManager.nearestPhotoFrom(latitude: centralLatitude, longitude: centralLongitude, photos: [photo1, photo2])
-        
-        XCTAssert(nearestPhoto.id == "2")
+        let nearestIndex = locationManager.nearestLocation(locations: [location1, location2], from: (centralLatitude, centralLongitude))
+        XCTAssertNotNil(nearestIndex)
+        XCTAssert(nearestIndex! == 1)
     }
     
     func testNearestPhotoFromLocationWithWrongLocation() {
         let centralLatitude: Double = 41.0
         let centralLongitude: Double = 2.0
-        let photo1 = PhotoDTO(id: "1", owner: nil, secret: "secret", server: "server", farm: 1, title: nil, latitude: "41.0", longitude: "wrong_location")
-        let photo2 = PhotoDTO(id: "2", owner: nil, secret: "secret", server: "server", farm: 1, title: nil, latitude: "wrong_location", longitude: "1.0")
         
-        let nearestPhoto = locationManager.nearestPhotoFrom(latitude: centralLatitude, longitude: centralLongitude, photos: [photo1, photo2])
-        
-        XCTAssert(nearestPhoto.id == "")
+        let nearestIndex = locationManager.nearestLocation(locations: [], from: (centralLatitude, centralLongitude))
+        XCTAssertNil(nearestIndex)
     }
     
     func testDidUpdateLocation() {

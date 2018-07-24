@@ -26,7 +26,8 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
     private let provider: FlickrServiceProtocol
     private let locationManager: LocationManagerProtocol
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+    private let globalScheduler = SerialDispatchQueueScheduler(qos: .utility)
     var isPendingToStart = false
     
     //Fetch images taken in the latests 6 months
@@ -74,17 +75,33 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
             }
         } catch { }
     }
+    
+    func bestPhotoFromResponse(responseDTO: FlickrPhotosResponseDTO, centerLocation: (Double, Double)) -> Photo {
+        let locations = responseDTO.photos.photos.compactMap({ (photoDTO) -> (Double, Double)? in
+            guard let lat = Double(photoDTO.latitude), let lon = Double(photoDTO.longitude) else { return nil }
+            return (lat, lon)
+        })
+        guard let nearestIndex = self.locationManager.nearestLocation(locations: locations, from: centerLocation) else {
+            return Photo()
+        }
+        let nearestPhotoDTO = responseDTO.photos.photos[nearestIndex]
+        return Photo().loadValue(id: nearestPhotoDTO.id, url: nearestPhotoDTO.imageURL, fetchDate: Date())
+    }
 }
 
 extension RouteTrackerPresenter: LocationManagerDelegate {
     func didUpdateLocation(lat: Double, lon: Double) {
         print("New location received: \(lat) - \(lon)")
-        provider.searchPhotoBy(latitude: lat, longitude: lon, minDate: minDate).filter({ (responseDTO) -> Bool in
-            return responseDTO.photos.photos.count > 0
-        }).map({ (responseDTO) -> Photo in
-            return self.locationManager.nearestPhotoFrom(latitude: lat, longitude: lon, photos: responseDTO.photos.photos)
-        }).subscribe(Realm.rx.add())
-        .disposed(by: disposeBag)
+        provider.searchPhotoBy(latitude: lat, longitude: lon, minDate: minDate)
+            .filter({ (responseDTO) -> Bool in
+                return responseDTO.photos.photos.count > 0
+            })
+            .subscribeOn(globalScheduler)
+            .map({ (responseDTO) -> Photo in
+                return self.bestPhotoFromResponse(responseDTO: responseDTO, centerLocation: (lat, lon))
+            })
+            .subscribe(Realm.rx.add())
+            .disposed(by: disposeBag)
     }
     
     func didChangeAuthorizationStatus(status: LocationStatus) {

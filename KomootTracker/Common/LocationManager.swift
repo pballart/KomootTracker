@@ -16,7 +16,7 @@ protocol LocationManagerProtocol: class {
     func locationStatus() -> LocationStatus
     var delegate: LocationManagerDelegate? { get set }
     var isTrackingLocation: Bool { get set }
-    func nearestPhotoFrom(latitude: Double, longitude: Double, photos: [PhotoDTO]) -> Photo
+    func nearestLocation(locations: [(Double, Double)], from center: (Double, Double)) -> Int?
 }
 
 protocol LocationManagerDelegate: class {
@@ -86,23 +86,19 @@ class LocationManager: NSObject, LocationManagerProtocol {
         }
     }
     
-    func nearestPhotoFrom(latitude: Double, longitude: Double, photos: [PhotoDTO]) -> Photo {
-        let centerLocation = CLLocation(latitude: latitude, longitude: longitude)
+    func nearestLocation(locations: [(Double, Double)], from center: (Double, Double)) -> Int? {
+        let centerLocation = CLLocation(latitude: center.0, longitude: center.1)
         var smallestDistance: Double = Double.greatestFiniteMagnitude
-        var nearestPhotoDTO: PhotoDTO?
-        for photo in photos {
-            guard let lat = Double(photo.latitude), let lon = Double(photo.longitude) else {
-                continue
-            }
-            let photoLocation = CLLocation(latitude: lat, longitude: lon)
-            let distance = photoLocation.distance(from: centerLocation)
+        var nearestIndex: Int?
+        for (index, location) in locations.enumerated() {
+            let evaluatingLocation = CLLocation(latitude: location.0, longitude: center.1)
+            let distance = evaluatingLocation.distance(from: centerLocation)
             if distance < smallestDistance {
                 smallestDistance = distance
-                nearestPhotoDTO = photo
+                nearestIndex = index
             }
         }
-        guard let choosenPhotoDTO = nearestPhotoDTO else { return Photo() }
-        return Photo().loadValue(id: choosenPhotoDTO.id, url: choosenPhotoDTO.imageURL, fetchDate: Date())
+        return nearestIndex
     }
 }
 

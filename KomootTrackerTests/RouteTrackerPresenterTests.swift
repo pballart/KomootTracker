@@ -51,5 +51,14 @@ class RouteTrackerPresenterTests: XCTestCase {
         XCTAssert(locationManager.startUpdatingLocationCalled)
         XCTAssert(view.updateStartButtonCalled)
     }
+    
+    func testBestPhotoFromResponse() {
+        presenter = RouteTrackerPresenter(view: view, provider: provider, locationManager: LocationManager())
+        let photo1 = PhotoDTO(id: "1", owner: nil, secret: "123", server: "123", farm: 1, title: nil, latitude: "43.0", longitude: "2.0")
+        let photo2 = PhotoDTO(id: "2", owner: nil, secret: "123", server: "123", farm: 1, title: nil, latitude: "42.0", longitude: "2.0")
+        let response = FlickrPhotosResponseDTO(photos: SearchPhotoDTO(page: nil, pages: nil, perPage: nil, total: nil, photos: [photo1, photo2]), stat: "")
+        let nearestPhoto = presenter.bestPhotoFromResponse(responseDTO: response, centerLocation: (41.0, 2.0))
+        XCTAssert(nearestPhoto.id == "2")
+    }
 
 }
