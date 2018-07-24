@@ -37,7 +37,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
     var isTrackingLocation: Bool
     var lastLocation: CLLocation?
     
-    let minimumDistanceBetweenLocationUpdates: Double = 50
+    let minimumDistanceBetweenLocationUpdates: Double = 80
     let locationDistanceFilter: Double = 100
     
     override init() {
