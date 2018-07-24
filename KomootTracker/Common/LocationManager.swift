@@ -91,7 +91,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
         var smallestDistance: Double = Double.greatestFiniteMagnitude
         var nearestIndex: Int?
         for (index, location) in locations.enumerated() {
-            let evaluatingLocation = CLLocation(latitude: location.0, longitude: center.1)
+            let evaluatingLocation = CLLocation(latitude: location.0, longitude: location.1)
             let distance = evaluatingLocation.distance(from: centerLocation)
             if distance < smallestDistance {
                 smallestDistance = distance
