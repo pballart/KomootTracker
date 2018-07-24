@@ -18,37 +18,33 @@ protocol RouteTrackerViewProtocol: class {
 }
 
 protocol RouteTrackerPresenterProtocol: class {
-    func viewDidLoad()
     func startButtonPressed()
 }
 
 class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
-    fileprivate weak var view: RouteTrackerViewProtocol!
-    fileprivate let provider: FlickrServiceProtocol
-    fileprivate var locationManager: LocationManagerProtocol
+    private weak var view: RouteTrackerViewProtocol?
+    private let provider: FlickrServiceProtocol
+    private let locationManager: LocationManagerProtocol
     
     let disposeBag = DisposeBag()
     var isPendingToStart = false
     
     //Fetch images taken in the latests 6 months
     let minDate = Date().addingTimeInterval(-3600*24*30*6).timeIntervalSince1970
-
+    
     init(view: RouteTrackerViewProtocol,
          provider: FlickrServiceProtocol = FlickrService(provider: MoyaProvider<SearchEndpoint>()),
          locationManager: LocationManagerProtocol = LocationManager()) {
         self.view = view
         self.provider = provider
         self.locationManager = locationManager
-    }
-    
-    func viewDidLoad() {
-        locationManager.delegate = self
+        self.locationManager.delegate = self
     }
     
     func startButtonPressed() {
         if locationManager.isTrackingLocation {
             locationManager.stopUpdatingLocation()
-            view.updateStartButton(title: "Start")
+            view?.updateStartButton(title: "Start")
         } else {
             switch locationManager.locationStatus() {
             case .notDetermined:
@@ -56,27 +52,28 @@ class RouteTrackerPresenter: RouteTrackerPresenterProtocol {
                 locationManager.requestLocationPermission()
             case .notEnabled:
                 isPendingToStart = false
-                view.showEnableLocationServiesAlert()
+                view?.showEnableLocationServiesAlert()
             case .rejected:
                 isPendingToStart = false
-                view.showAuthorizeLocationServiesAlert()
+                view?.showAuthorizeLocationServiesAlert()
             case .authorized:
                 isPendingToStart = false
                 cleanDataBase()
                 locationManager.startUpdatingLocation()
-                view.updateStartButton(title: "Stop")
+                view?.updateStartButton(title: "Stop")
             }
         }
     }
     
     private func cleanDataBase() {
-        let realm = try! Realm()
+        guard let realm = try? Realm() else { return }
         let photos = realm.objects(Photo.self)
-        try! realm.write {
-            realm.delete(photos)
-        }
+        do {
+            try realm.write {
+                realm.delete(photos)
+            }
+        } catch { }
     }
-    
 }
 
 extension RouteTrackerPresenter: LocationManagerDelegate {
@@ -94,7 +91,7 @@ extension RouteTrackerPresenter: LocationManagerDelegate {
         if status == .authorized && isPendingToStart {
             isPendingToStart = false
             locationManager.startUpdatingLocation()
-            view.updateStartButton(title: "Stop")
+            view?.updateStartButton(title: "Stop")
         }
     }
 }

@@ -3,10 +3,10 @@ platform :ios, '11.0'
 
 def common_pods
     pod 'Moya/RxSwift', '~> 10.0'
-    pod 'Result'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'RealmSwift'
     pod 'RxRealm'
-    pod 'RxCocoa'
     pod 'AlamofireImage', '~> 3.3'
 end
 

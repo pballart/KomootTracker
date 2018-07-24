@@ -18,8 +18,8 @@ protocol FlickrServiceProtocol {
 }
 
 class FlickrService: FlickrServiceProtocol {
-    let disposeBag = DisposeBag()
-    let flickrProvider: MoyaProvider<SearchEndpoint>
+    private let disposeBag = DisposeBag()
+    private let flickrProvider: MoyaProvider<SearchEndpoint>
     
     init(provider: MoyaProvider<SearchEndpoint>) {
         flickrProvider = provider

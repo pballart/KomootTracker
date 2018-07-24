@@ -25,9 +25,9 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.3)
   - Moya/RxSwift (~> 10.0)
   - RealmSwift
-  - Result
   - RxCocoa
   - RxRealm
+  - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -52,6 +52,6 @@ SPEC CHECKSUMS:
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: 2ef245419e99721beda9f513f071ac2aaa2d3b55
+PODFILE CHECKSUM: 16c1f9ae45c0ad517ed2cb74a972b81381a157e3
 
 COCOAPODS: 1.5.3

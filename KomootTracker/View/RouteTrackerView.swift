@@ -24,19 +24,20 @@ class RouteTrackerView: UIViewController, RouteTrackerViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = RouteTrackerPresenter(view: self)
-        presenter?.viewDidLoad()
         tableView.register(UINib(nibName: "RouteTrackerCell", bundle: nil), forCellReuseIdentifier: "RouteTrackerCellIdentifier")
         tableView.tableFooterView = UIView()
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
-        let realm = try! Realm()
+        guard let realm = try? Realm() else { return }
         let photos = realm.objects(Photo.self).sorted(byKeyPath: "fetchDate", ascending: false)
-        Observable.collection(from: photos).bind(to: tableView.rx.items(cellIdentifier: "RouteTrackerCellIdentifier")) { (row, photo: Photo, cell: RouteTrackerCell) in
-            guard let imageURL = URL(string: photo.url) else { return }
-            cell.photoImageView.af_setImage(withURL: imageURL)
-            }.disposed(by: disposeBag)
+        Observable.collection(from: photos)
+            .bind(to: tableView.rx.items(cellIdentifier: "RouteTrackerCellIdentifier")) { (row, photo: Photo, cell: RouteTrackerCell) in
+                guard let imageURL = URL(string: photo.url) else { return }
+                cell.photoImageView.af_setImage(withURL: imageURL)
+            }
+            .disposed(by: disposeBag)
     }
-
+    
     @IBAction func startRoute(_ sender: UIBarButtonItem) {
         presenter?.startButtonPressed()
     }

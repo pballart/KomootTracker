@@ -112,6 +112,6 @@ extension SearchEndpoint: TargetType {
 
 private extension String {
     var utf8Encoded: Data {
-        return data(using: .utf8)!
+        return data(using: .utf8) ?? Data()
     }
 }
