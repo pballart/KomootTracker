@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RouteTrackerCellIdentifier" rowHeight="121" id="3fU-UA-mCy" customClass="RouteTrackerCell" customModule="KomootTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3fU-UA-mCy" id="nw7-vz-GtK">
+                <rect key="frame" x="0.0" y="0.0" width="379" height="120.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jyu-Ab-4hI">
+                        <rect key="frame" x="8" y="4" width="363" height="112.5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="jyu-Ab-4hI" secondAttribute="bottom" constant="4" id="HRx-xp-ryN"/>
+                    <constraint firstAttribute="trailing" secondItem="jyu-Ab-4hI" secondAttribute="trailing" constant="8" id="Mwm-aW-Rqd"/>
+                    <constraint firstItem="jyu-Ab-4hI" firstAttribute="top" secondItem="nw7-vz-GtK" secondAttribute="top" constant="4" id="dxe-Yf-uZE"/>
+                    <constraint firstItem="jyu-Ab-4hI" firstAttribute="leading" secondItem="nw7-vz-GtK" secondAttribute="leading" constant="8" id="icT-WM-BgD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="photoImageView" destination="jyu-Ab-4hI" id="iQc-to-H3x"/>
+            </connections>
+            <point key="canvasLocation" x="-223.5" y="37.5"/>
+        </tableViewCell>
+    </objects>
+</document>
